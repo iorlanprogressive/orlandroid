@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<com.google.android.material.appbar.AppBarLayout
+		android:id="@+id/toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<com.google.android.material.appbar.MaterialToolbar
+			android:id="@+id/toolbar_title"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			app:title="@string/developer_title" />
+
+	</com.google.android.material.appbar.AppBarLayout>
+
+	<com.google.android.material.progressindicator.LinearProgressIndicator
+		android:id="@+id/progress_bar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginVertical="@dimen/spacing_xs"
+		app:layout_constraintTop_toBottomOf="@id/toolbar"
+		android:indeterminate="true"
+		android:visibility="gone" />
+
+	<com.google.android.material.card.MaterialCardView
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		app:layout_constraintTop_toBottomOf="@id/progress_bar"
+		app:layout_constraintBottom_toBottomOf="parent"
+		style="@style/Widget.OrlanDroid.TopRoundedCard">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/spacing_md"
+			android:orientation="vertical">
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<ImageView
+					android:id="@+id/logo"
+					android:layout_width="@dimen/icon_size_xxl"
+					android:layout_height="@dimen/icon_size_xxl"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"
+					android:contentDescription="@string/developer_logo_content_description"
+					android:src="@drawable/ic_image"/>
+
+				<LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintStart_toEndOf="@id/logo"
+					app:layout_constraintEnd_toEndOf="parent"
+					android:padding="@dimen/spacing_md"
+					android:orientation="vertical">
+
+					<com.google.android.material.textview.MaterialTextView
+						android:id="@+id/name"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:textAppearance="@style/TextAppearance.Material3.TitleMedium.Emphasized"
+						android:text="Название разработчика" />
+
+					<com.google.android.material.textview.MaterialTextView
+						android:id="@+id/description"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="@dimen/spacing_sm"
+						android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+						android:text="Описание разработчика" />
+
+					<com.google.android.material.textview.MaterialTextView
+						android:id="@+id/status"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="@dimen/spacing_sm"
+						android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+						android:text="Статус разработчика" />
+
+				</LinearLayout>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginVertical="@dimen/spacing_md"
+				android:orientation="horizontal">
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btn_website"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:text="@string/action_link_website"
+					android:textSize="5pt"
+					android:enabled="false"/>
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btn_email"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:layout_marginHorizontal="@dimen/spacing_xs"
+					android:text="@string/action_link_email"
+					android:textSize="5pt"
+					android:enabled="false"/>
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btn_phone"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:text="@string/action_link_phone"
+					android:textSize="5pt"
+					android:enabled="false"/>
+
+			</LinearLayout>
+
+			<com.google.android.material.textview.MaterialTextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textAppearance="@style/TextAppearance.Material3.TitleMedium.Emphasized"
+				android:text="@string/developer_apps_header" />
+
+			<com.google.android.material.button.MaterialButtonToggleGroup
+				android:id="@+id/toggle_sort"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginHorizontal="@dimen/spacing_md"
+				android:layout_marginVertical="@dimen/spacing_sm"
+				app:selectionRequired="true"
+				app:singleSelection="true"
+				app:checkedButton="@id/btn_rating" >
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btn_rating"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:text="@string/toggle_sort_by_rating"
+					style="?attr/materialButtonOutlinedStyle"/>
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btn_users"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:text="@string/toggle_sort_by_users_count"
+					style="?attr/materialButtonOutlinedStyle"/>
+
+			</com.google.android.material.button.MaterialButtonToggleGroup>
+
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/recycler_view"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/spacing_sm"
+				tools:listitem="@layout/item_app"/>
+
+		</LinearLayout>
+
+	</com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_margin="@dimen/spacing_sm">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="@dimen/spacing_md"
+		android:orientation="vertical">
+
+		<com.google.android.material.textview.MaterialTextView
+			android:id="@+id/user_name"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAppearance="@style/TextAppearance.Material3.TitleMedium.Emphasized"
+			android:text="Имя пользователя" />
+
+		<RatingBar
+			android:id="@+id/review_rating"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginVertical="@dimen/spacing_sm"
+			android:numStars="5"
+			android:stepSize="1"
+			android:rating="4"
+			style="?android:attr/ratingBarStyleIndicator" />
+
+		<com.google.android.material.textview.MaterialTextView
+			android:id="@+id/review_text"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+			android:text="Текст отзыва" />
+
+		<com.google.android.material.textview.MaterialTextView
+			android:id="@+id/review_date"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginVertical="@dimen/spacing_xs"
+			android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+			android:text="01.01.2025" />
+
+		<LinearLayout
+			android:id="@+id/developer_feedback_container"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginVertical="@dimen/spacing_sm"
+			android:padding="@dimen/spacing_sm"
+			android:orientation="vertical"
+			android:visibility="visible">
+
+			<com.google.android.material.textview.MaterialTextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/review_developer_feedback_header"
+				android:textAppearance="@style/TextAppearance.Material3.TitleSmall.Emphasized" />
+
+			<com.google.android.material.textview.MaterialTextView
+				android:id="@+id/developer_feedback"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginVertical="@dimen/spacing_xs"
+				android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+				android:text="Текст ответа разработчика" />
+
+			<com.google.android.material.textview.MaterialTextView
+				android:id="@+id/developer_feedback_date"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+				android:text="01.01.2025" />
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<ImageButton
+				android:id="@+id/btn_like"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginEnd="@dimen/spacing_xs"
+				android:background="?attr/selectableItemBackgroundBorderless"
+				android:contentDescription="@string/like_content_description"
+				android:src="@drawable/ic_thumb_up_outlined" />
+
+			<com.google.android.material.textview.MaterialTextView
+				android:id="@+id/likes_count"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginEnd="@dimen/spacing_sm"
+				android:layout_gravity="center_vertical"
+				android:text="0" />
+
+			<ImageButton
+				android:id="@+id/btn_dislike"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginEnd="@dimen/spacing_xs"
+				android:background="?attr/selectableItemBackgroundBorderless"
+				android:contentDescription="@string/dislike_content_description"
+				android:src="@drawable/ic_thumb_down_outlined" />
+
+			<com.google.android.material.textview.MaterialTextView
+				android:id="@+id/dislikes_count"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:text="0" />
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

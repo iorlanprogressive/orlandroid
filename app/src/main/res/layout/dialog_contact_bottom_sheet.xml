@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:padding="@dimen/spacing_md">
+
+	<com.google.android.material.progressindicator.LinearProgressIndicator
+		android:id="@+id/progress_bar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginVertical="@dimen/spacing_xs"
+		android:indeterminate="true"
+		android:visibility="gone" />
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/recycler_view"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:maxHeight="@dimen/size_xxl"
+		tools:listitem="@layout/item_contact"/>
+
+</LinearLayout>
