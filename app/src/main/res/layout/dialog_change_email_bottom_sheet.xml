@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:padding="@dimen/spacing_md">
+
+	<com.google.android.material.progressindicator.LinearProgressIndicator
+		android:id="@+id/progress_bar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginVertical="@dimen/spacing_xs"
+		android:indeterminate="true"
+		android:visibility="gone" />
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/email_text_input_container"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/email"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:hint="@string/email_hint"
+			android:inputType="textEmailAddress" />
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/verify_code_input_container"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:visibility="gone">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/code"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:hint="@string/verify_code_hint"
+			android:inputType="number" />
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btn_require_verify_code"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/spacing_md"
+		android:text="@string/action_require_verify_code" />
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btn_accept"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/spacing_md"
+		android:text="@string/action_change_email"
+		android:visibility="gone" />
+
+</LinearLayout>
