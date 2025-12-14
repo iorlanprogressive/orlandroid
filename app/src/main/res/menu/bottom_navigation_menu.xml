@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item
+		android:id="@+id/topFragment"
+		android:icon="@drawable/ic_stars"
+		android:title="@string/top_menu_item" />
+	<item
+		android:id="@+id/categoriesFragment"
+		android:icon="@drawable/ic_category"
+		android:title="@string/categories_menu_item" />
+	<item
+		android:id="@+id/myAppsFragment"
+		android:icon="@drawable/ic_favorite"
+		android:title="@string/my_apps_menu_item" />
+	<item
+		android:id="@+id/accountFragment"
+		android:icon="@drawable/ic_person"
+		android:title="@string/account_menu_item" />
+</menu>

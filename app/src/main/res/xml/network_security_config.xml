@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+	<domain-config cleartextTrafficPermitted="false">
+		<domain includeSubdomains="true">orlan-progressive.ru</domain>
+		<trust-anchors>
+			<certificates src="system" />
+			<certificates src="user" />
+			<certificates src="@raw/russian_trusted_root_ca" />
+			<certificates src="@raw/russian_trusted_root_ca_gost" />
+			<certificates src="@raw/russian_trusted_sub_ca" />
+			<certificates src="@raw/russian_trusted_sub_ca_gost" />
+		</trust-anchors>
+	</domain-config>
+</network-security-config>
